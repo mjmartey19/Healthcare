@@ -46,10 +46,10 @@ const PatientForm = () => {
     try{
       //Create userData object
       const userData = { name, email, phone }
-
-      //Store user in database (AppWrite)
+      console.log(userData)
+      //Store user in Auth database (AppWrite)
       const user = await createUser(userData);
-
+      console.log(user)
       if(user) router.push(`/patients/${user.$id}/register `) //Reidrect user to register page after ifno stored in database
 
     }catch(error) {
